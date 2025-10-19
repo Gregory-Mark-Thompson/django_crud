@@ -1,0 +1,193 @@
+.army-container {
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.army-img {
+  width: 30%;
+  max-width: 350px;
+}
+
+.usr-img {
+  width: 100%;
+  border-radius: var(--card-border-radius);
+}
+
+.army-details {
+  width: 98%;
+}
+
+.army-actions {
+  margin-top: 20px;
+}
+
+.battle-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.subsection-content {
+  margin: 0 8px;
+}
+
+.color-block {
+  opacity: 0.8;
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+
+.army-details h1 {
+  font-size: var(--font-xxl);
+  margin: 15px 0 3px;
+}
+
+.army-details h2 {
+  font-size: var(--font-xl);
+  margin: 0 0 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.army-details h3 {
+  margin: 20px 0 10px;
+  font-size: var(--font-l);
+}
+
+.army-details p {
+  font-size: var(--font-reg);
+  margin: 5px 0;
+}
+
+.battle-container > section {
+  width: 80%;
+  min-width: 360px;
+  border: var(--borders);
+  border-radius: var(--card-border-radius);
+  padding: 10px;
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.subsection-title img {
+  height: 42px;
+  margin-left: 8px;
+}
+
+.subsection-title img:first-of-type {
+  margin-left: 16px;
+}
+
+.battle h2 {
+  font-size: 3.2rem;
+  margin: 0;
+}
+
+.battle h3 {
+  font-size: var(--font-xl);
+  margin: 10px 0;
+}
+
+.subsection-content input,
+.subsection-content select {
+  font-size: var(--font-l);
+}
+
+.subsection-content input,
+.subsection-content select {
+  margin-left: 5px;
+  padding: 3px;
+}
+
+.battle table {
+  width: calc(100% - 16px);
+  text-align: left;
+  border-collapse: collapse;
+  margin: 0 8px;
+}
+
+.battle td {
+  padding: 8px 5px;
+  font-size: var(--font-reg);
+}
+
+.battle th {
+  font-size: var(--font-l);
+  padding: 5px 5px 0;
+  border-bottom: rgb(36, 116, 248) solid 2px;
+}
+
+.battle tr:nth-child(even) {
+  background-color: #f3f3fd;
+}
+
+.battle p {
+    margin: 12px 0;
+}
+
+.battle a {
+  text-decoration: none;
+  color: #111;
+}
+
+.battle .btn {
+  padding: 3px 10px;
+  margin-left: 10px;
+}
+
+#file-input {
+  overflow: hidden;
+  position: absolute;
+  width: 0.1px;
+  height: 0.1px;
+}
+
+#file-name {
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+    .army-container {
+        padding: 35px 30px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .army-img {
+        width: 25%;
+        max-width: 325px;
+        margin-right: 25px;
+    }
+
+    .battle-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    .battle-container > section {
+        width: 45%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+  .feedings-toy-container {
+    padding: 0 40px;
+  }
+}

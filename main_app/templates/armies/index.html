@@ -12,6 +12,7 @@
 <section class="card-container">
     {% for army in armies %}
     <div class="card">
+        <a href="/armies/{{ army.id }}">
         <div class="card-content">
             <div class="card-img-container">
 
@@ -37,6 +38,7 @@
             <h3> {{ army.leader }} </h3>
 
         </div>
+    </a>
     </div>
     {% endfor %}
 </section>

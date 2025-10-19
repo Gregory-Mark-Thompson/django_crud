@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/armies/army-detail.css' %}" />
+{% endblock %}
+{% block content %}
+<section class="army-container">
+    <div class="army-img">
+        {% if army.nationality == 'French' %}
+        <img src="{% static 'images/la_grande_armee.png' %}"
+        alt="Oil Painting of a French Soldier"
+        />
+        {% elif army.nationality == 'Confederate' %}
+        <img src="{% static 'images/confederates_presumably.png' %}"
+        alt="Watercolor of what may or may not be Confederate troops"
+        />
+        {% elif army.nationality == 'German' %}
+        <img src="{% static 'images/theres_nothing_weird_about_this.png' %}"
+        alt="There's definitely nothing odd or disturbing about these toy WWII soldiers."
+        />
+        {% else %}
+        <img src="{% static 'images/generic_soldiers.png' %}"
+        alt="Basic b. green army men like from Toy Story"
+        />
+        {% endif %}
+    </div>
+    <div class="army-details">
+        <h1>{{ army.name }}</h1>
+        <ul>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Chief Commander: {{ army.leader }}</p></li>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Nation they shed blood for: {{ army.nationality }}</p></li>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Year: {{ army.year }}</p></li>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Size at some point that year: {{ army.size }}</p></li>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;The tools they used to kill: {{ army.weapons }}</p></li>
+            <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Interesting observations: {{ army.details }}</p></li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
+ 
