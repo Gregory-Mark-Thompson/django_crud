@@ -34,7 +34,9 @@
             <li><p>&nbsp;&nbsp;&nbsp;&nbsp;The tools they used to kill: {{ army.weapons }}</p></li>
             <li><p>&nbsp;&nbsp;&nbsp;&nbsp;Interesting observations: {{ army.details }}</p></li>
         </ul>
+        <div class="army-actions">
+            <a href="{% url 'army-update' army.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'army-delete' army.id %}" class="btn danger">Delete</a> </div>
     </div>
 </section>
 {% endblock %}
- 

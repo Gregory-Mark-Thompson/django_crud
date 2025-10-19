@@ -12,7 +12,7 @@
 <section class="card-container">
     {% for army in armies %}
     <div class="card">
-        <a href="/armies/{{ army.id }}">
+        <a href="{% url 'army-detail' army.id %}">
         <div class="card-content">
             <div class="card-img-container">
 

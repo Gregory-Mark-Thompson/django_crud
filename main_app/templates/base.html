@@ -21,8 +21,9 @@
       </div>
       <nav>
         <ul>
-          <li><a href="/armies">All Armies</a></li>
-          <li><a href="/about">About</a></li>
+          <li><a href="{% url 'army-index' %}">All Armies</a></li>
+          <li><a href="{% url 'army-create' %}">Add an Army</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
         </ul>
       </nav>
     </header>
