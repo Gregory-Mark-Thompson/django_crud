@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/armies/army-index.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="page-header">
+  <h1>Army List</h1>
+</section>
+
+<section class="card-container">
+    {% for army in armies %}
+    <div class="card">
+        <div class="card-content">
+            <div class="card-img-container">
+
+            </div>
+            <p>{% if army.nationality == 'French' %}
+            <img src="{% static 'images/la_grande_armee.png' %}"
+            alt="Oil Painting of a French Soldier"
+            />
+            {% elif army.nationality == 'Confederate' %}
+            <img src="{% static 'images/confederates_presumably.png' %}"
+            alt="Watercolor of what may or may not be Confederate troops"
+            />
+            {% elif army.nationality == 'German' %}
+            <img src="{% static 'images/theres_nothing_weird_about_this.png' %}"
+            alt="There's definitely nothing odd or disturbing about these toy WWII soldiers."
+            />
+            {% else %}
+            <img src="{% static 'images/generic_soldiers.png' %}"
+            alt="Basic b. green army men like from Toy Story"
+            /></p>
+            {% endif %}
+            <h2 class="card-title">{{ army.name }}</h2>
+            <h3> {{ army.leader }} </h3>
+
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

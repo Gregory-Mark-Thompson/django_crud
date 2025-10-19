@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/home.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="logo-container">
+  <div class="army-container">
+    <img
+      src="{% static 'images/game_logger_logo_big.png' %}"
+      alt="The Game Logger Cavalryman"
+    />
+  </div>
+  <img
+    src="{% static 'images/game_logger_banner_altered_3.png' %}"
+    alt="Text reads: Game Logger"
+  />
+</section>
+
+{% endblock %}
