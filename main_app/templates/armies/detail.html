@@ -39,4 +39,57 @@
             <a href="{% url 'army-delete' army.id %}" class="btn danger">Delete</a> </div>
     </div>
 </section>
+
+
+
+<div class="battle-container">
+    <section class="battle">
+        <div class="subsection-title">
+            <h2>Battles</h2>
+            <img
+              src="{% static 'images/orc.png' %}"
+              alt="What I'm fairly certain is an Orc Boi from Warhammer 40k"
+            />
+        </div>
+        <h3>Add a Battle</h3>
+        <form
+          action="{% url 'add-battle' army.id %}"
+          method="post"
+          class="subsection-content"
+          autocomplete="off"
+        >
+            {% csrf_token %}
+            {{ battle_form.as_p }}
+            <button type="submit" class="btn submit">Add Battle</button>
+        </form>
+        <h3>Past Battles</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Enemy</th>
+                    <th>Losses</th>
+                    <th>Enemy's Losses</th>
+                    <th>Outcome</th>
+                    <th>Discussion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for battle in army.battle_set.all %}
+                    <tr>
+                        <td>{{battle.date}}</td>
+                        <td>{{battle.location}}</td>
+                        <td>{{battle.enemy}}</td>
+                        <td>{{battle.losses}}</td>
+                        <td>{{battle.enemy_losses}}</td>
+                        <td>{{battle.get_outcome_display}}</td>
+                        <td>{{battle.discussion}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
 {% endblock %}
