@@ -1,0 +1,186 @@
+/* Delete Confirmation Page */
+.delete-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.warning-icon {
+    font-size: 3rem;
+    filter: drop-shadow(0 2px 4px rgba(220, 53, 69, 0.3));
+}
+
+.delete-title {
+    font-size: var(--font-xxl);
+    color: #dc3545;
+    margin: 0;
+    font-weight: 700;
+}
+
+.battle-preview {
+    background: white;
+    border: var(--borders);
+    border-radius: var(--card-border-radius);
+    padding: 24px;
+    margin-bottom: 24px;
+    width: 100%;
+    box-shadow: var(--card-box-shadow);
+}
+
+.battle-name {
+    font-size: var(--font-xl);
+    color: #333;
+    margin: 0 0 16px 0;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+}
+
+.battle-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 0;
+}
+
+.battle-details p {
+    margin: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.discussion-preview {
+    grid-column: 1 / -1 !important;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 0 var(--card-border-radius) var(--card-border-radius) 0;
+    font-style: italic;
+}
+
+.warning-box {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffeaea 100%);
+    border: 1px solid #f8d7da;
+    border-radius: var(--card-border-radius);
+    padding: 20px;
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: center;
+}
+
+.warning-text {
+    color: #721c24;
+    font-size: var(--font-reg);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.delete-form {
+    margin: 0;
+}
+
+.delete-btn {
+    padding: 12px 24px;
+    font-size: var(--font-l);
+    font-weight: 600;
+    min-width: 160px;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(220, 53, 69, 0.4);
+}
+
+.cancel-btn {
+    padding: 12px 24px;
+    font-size: var(--font-l);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--card-border-radius);
+    transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Loading state */
+.btn-loading {
+    display: none;
+}
+
+.delete-btn.loading .btn-text {
+    display: none;
+}
+
+.delete-btn.loading .btn-loading {
+    display: inline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .delete-container {
+        margin: 20px auto;
+        padding: 0 16px;
+    }
+    
+    .delete-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .battle-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .delete-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .delete-btn,
+    .cancel-btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .warning-box {
+        border-width: 2px;
+        background-color: #ffebee;
+    }
+    
+    .delete-title {
+        color: #d32f2f;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .delete-btn:hover,
+    .cancel-btn:hover {
+        transform: none;
+    }
+}

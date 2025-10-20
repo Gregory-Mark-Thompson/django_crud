@@ -191,3 +191,41 @@
     padding: 0 40px;
   }
 }
+
+.battle .actions {
+    white-space: nowrap;
+    text-align: center;
+    padding: 0;
+}
+
+.battle .btn-small {
+    padding: 6px 12px;          /* More padding for better click area */
+    font-size: var(--font-reg); /* Use your existing font size */
+    margin: 0 4px;              /* Space between buttons */
+    display: inline-block;      /* Ensure inline display */
+    line-height: 1.2;           /* Tighten vertical spacing */
+    border-radius: var(--card-border-radius); /* Match your design */
+    text-decoration: none;      /* Remove underline */
+    transition: all 0.2s ease;  /* Smooth hover effect */
+}
+
+.battle .btn-small:hover {
+    transform: translateY(-1px); /* Subtle lift effect */
+    box-shadow: var(--card-box-shadow); /* Match your card shadows */
+}
+
+/* Responsive: Stack buttons on very small screens */
+@media only screen and (max-width: 480px) {
+    .battle .actions {
+        white-space: normal;      /* Allow wrapping on tiny screens */
+    }
+    
+    .battle .btn-small {
+        display: block;           /* Stack vertically on mobile */
+        margin: 4px 0;            /* Vertical spacing */
+        width: 100%;              /* Full width on mobile */
+        text-align: center;
+    }
+}
+
+

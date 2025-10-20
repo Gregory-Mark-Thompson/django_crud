@@ -73,6 +73,7 @@
                     <th>Enemy's Losses</th>
                     <th>Outcome</th>
                     <th>Discussion</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -85,6 +86,16 @@
                         <td>{{battle.enemy_losses}}</td>
                         <td>{{battle.get_outcome_display}}</td>
                         <td>{{battle.discussion}}</td>
+                        <td class="actions">
+                            <a href="{% url 'battle-update' army_id=army.id battle_id=battle.id %}"
+                                class="btn warn btn-small">Edit</a>
+                            <a href="{% url 'battle-delete' army_id=army.id battle_id=battle.id %}"
+                                class="btn danger btn-small">Delete</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="8" class="no-data">No battles yet. Add one above!</td>
                     </tr>
                 {% endfor %}
             </tbody>

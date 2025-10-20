@@ -15,4 +15,6 @@ urlpatterns = [
         name='add-battle'
     ),
     path('accounts/signup/', views.signup, name='signup'),
+    path('armies/<int:army_id>/battles/<int:battle_id>/update/', views.BattleUpdate.as_view(), name='battle-update'),
+    path('armies/<int:army_id>/battles/<int:battle_id>/delete/', views.BattleDelete.as_view(), name='battle-delete'),
 ]

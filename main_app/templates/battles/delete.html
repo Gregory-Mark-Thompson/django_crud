@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/battles/delete.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="delete-container">
+    <div class="delete-header">
+        <div class="warning-icon">⚠️</div>
+        <h1 class="delete-title">Delete Battle?</h1>
+    </div>
+
+    <div class="battle-preview">
+        <h2 class="battle-name">{{ object.date|date:"F j, Y" }} - {{ object.enemy }}</h2>
+        <div class="battle-details">
+            <p><strong>Location:</strong> {{ object.location }}</p>
+            <p><strong>Your Losses:</strong> {{ object.losses }}</p>
+            <p><strong>Enemy Losses:</strong> {{ object.enemy_losses }}</p>
+            <p><strong>Outcome:</strong> {{ object.get_outcome_display }}</p>
+            <p class="discussion-preview">{{ object.discussion|truncatechars:100 }}</p>
+        </div>
+    </div>
+
+    <div class="warning-box">
+        <p class="warning-text">
+            <strong>This action cannot be undone.</strong> Deleting this battle will remove it permanently from your records.
+        </p>
+    </div>
+
+    <div class="delete-actions">
+        <form method="post" class="delete-form">
+            {% csrf_token %}
+            <button type="submit" class="btn danger delete-btn" id="confirm-delete">
+                <span class="btn-text">🗑️ Delete Battle</span>
+                <span class="btn-loading" style="display: none;">Deleting...</span>
+            </button>
+        </form>
+        <a href="{% url 'army-detail' army_id=object.army_id %}" class="btn neutral cancel-btn">
+            Cancel
+        </a>
+    </div>
+
+    <input type="hidden" name="army_id" value="{{ object.army_id }}">
+</div>
+
+{% endblock %}
