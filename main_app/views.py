@@ -22,7 +22,7 @@ def about(request):
 
 class ArmyCreate(LoginRequiredMixin, CreateView):
     model = Army
-    fields = '__all__'
+    fields = ['name', 'nationality', 'size', 'weapons', 'year', 'leader', 'details']
 
     def form_valid(self, form):
         form.instance.user = self.request.user
